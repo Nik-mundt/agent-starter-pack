@@ -13,7 +13,7 @@
 # limitations under the License.
 
 steps:
-  - name: "python:3.11-slim" 
+  - name: "python:3.11-slim"
     id: install-dependencies
     entrypoint: /bin/bash
     args:
@@ -21,7 +21,7 @@ steps:
       - |
         pip install uv==0.6.12 --user && uv sync --frozen
     env:
-      - 'PATH=/usr/local/bin:/usr/bin:~/.local/bin'
+      - "PATH=/usr/local/bin:/usr/bin:~/.local/bin"
 
   - name: "python:3.11-slim"
     id: deploy-staging
@@ -35,8 +35,7 @@ steps:
           --location ${_REGION} \
           --set-env-vars="COMMIT_SHA=${COMMIT_SHA}"
     env:
-      - 'PATH=/usr/local/bin:/usr/bin:~/.local/bin'
-
+      - "PATH=/usr/local/bin:/usr/bin:~/.local/bin"
 
   - name: gcr.io/cloud-builders/gcloud
     id: fetch-auth-token
@@ -61,7 +60,7 @@ steps:
         --csv=tests/load_test/.results/results \
         --html=tests/load_test/.results/report.html
     env:
-      - 'PATH=/usr/local/bin:/usr/bin:~/.local/bin'
+      - "PATH=/usr/local/bin:/usr/bin:~/.local/bin"
 
   # Export Load Test Results to GCS
   - name: gcr.io/cloud-builders/gcloud
