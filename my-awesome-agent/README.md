@@ -3,7 +3,7 @@
 A production-ready fullstack research agent that uses Gemini to strategize, research, and synthesize comprehensive reports with human-in-the-loop collaboration
 Agent generated with [`googleCloudPlatform/agent-starter-pack`](https://github.com/GoogleCloudPlatform/agent-starter-pack) version `0.6.3`
 
-## Project Structure
+## Project Structure new
 
 This project is organized as follows:
 
